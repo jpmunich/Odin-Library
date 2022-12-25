@@ -4,6 +4,11 @@
     box-sizing: border-box;
     color: whitesmoke;
     font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: 700;
+}
+
+body {
+    background-color: rgb(167, 167, 167);
 }
 
 h1 {
@@ -59,26 +64,25 @@ h1 {
     transform: translate(-50%, -50%);
     left: 50%;
     top: 55%;
-    height: 70%;
+    height: 75%;
     width: 50%;
-    background-color: rgb(202, 151, 75);
+    background-color: rgb(155, 134, 102);
     border-radius: 25px;
 }
 
 #exit-add-book-interface {
     position: relative;
     top: 0%;
-    left: 90%;
-    height: 20px;
-    width: 20px;
-    background-color: whitesmoke;
+    left: 85%;
+    height: 40px;
+    width: 40px;
 }
 
 #add-book-interface-header {
     position: relative;
-    top: 2.5vh;
+    top: 5vh;
     text-align: center;
-    font-size: 24px;
+    font-size: 30px;
     font-weight: 700;
 }
 
@@ -91,18 +95,16 @@ h1 {
     margin-top: 50px;
 }
 
-#input-container > * {
-    
-}
-
 #submit-button {
     position: relative;
     transform: translateX(-50%);
     top: 20px;
     left: 50%;
     padding: 20px 100px;
+    font-size: 20px;
     border: 0;
     background-color: black;
+    border-radius: 5px;
 }
 
 #input-container > input {
@@ -110,13 +112,17 @@ h1 {
     margin: 20px 0 20px 0;
     font-size: 20px;
     color: black;
+    border: 0;
+    border-radius: 10px;
+
 }
+
 .book-card {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
-    height: 250px;
+    height: 350px;
     width: 30%;
     background-color: rgb(0, 0, 0);
     border-radius: 15px;
@@ -126,6 +132,11 @@ h1 {
     color: black;
     margin-bottom: 25px;
     padding: 5% 10%;
+    background-color: rgb(167, 167, 167);
+    font-size: 16px;
+    font-weight: 600;
+    border: 0;
+    border-radius: 10px;
 }
 
 .invisible {

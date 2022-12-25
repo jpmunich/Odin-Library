@@ -46,6 +46,7 @@ function addBookClick(event) {
 }
 
 function createNewBookObject() {
+    let theNewBook;
     const title = inputs[0].value;
     const author = inputs[1].value;
     const pages = inputs[2].value;
@@ -55,8 +56,12 @@ function createNewBookObject() {
       alert("Must fill out fields correctly!");
       return;
     }
-  
-    const theNewBook = new Book(title, author, pages, false);
+    
+    if (inputs[3].checked) {
+        theNewBook = new Book(title, author, pages, true);
+    } else {
+        theNewBook = new Book(title, author, pages, false);
+    }
     addBookToLibrary(theNewBook);
   }
 
