@@ -3,10 +3,25 @@
     padding: 0;
     box-sizing: border-box;
     color: whitesmoke;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 h1 {
     padding-left: 25px;
+}
+
+.overlay {
+    visibility: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.active-overlay {
+    visibility: visible;
 }
 
 #navbar {
@@ -16,11 +31,86 @@ h1 {
     background-color: rgb(32, 32, 32);
 }
 
+#add-book-button {
+    position: relative;
+    font-size: 24px;
+    font-weight: 700;
+    padding: 30px 50px 30px 50px;
+    margin: 40px 0 40px 0;
+    background-color: rgb(66, 66, 66);
+    border: 0px;
+    border-radius: 2.5px;
+    transform: translateX(-50%);
+    left: 50%;
+}
+
+#add-book-button:hover {
+    background-color: rgb(0, 0, 0);
+}
+
 #book-card-container {  
     display: flex;
     justify-content: space-around;
+    flex-wrap: wrap;
 }
 
+#add-book-interface {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 55%;
+    height: 70%;
+    width: 50%;
+    background-color: rgb(202, 151, 75);
+    border-radius: 25px;
+}
+
+#exit-add-book-interface {
+    position: relative;
+    top: 0%;
+    left: 90%;
+    height: 20px;
+    width: 20px;
+    background-color: whitesmoke;
+}
+
+#add-book-interface-header {
+    position: relative;
+    top: 2.5vh;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+#input-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+
+#input-container > * {
+    
+}
+
+#submit-button {
+    position: relative;
+    transform: translateX(-50%);
+    top: 20px;
+    left: 50%;
+    padding: 20px 100px;
+    border: 0;
+    background-color: black;
+}
+
+#input-container > input {
+    padding: 10px;
+    margin: 20px 0 20px 0;
+    font-size: 20px;
+    color: black;
+}
 .book-card {
     display: flex;
     flex-direction: column;
@@ -33,7 +123,9 @@ h1 {
 }
 
 .has-read {
+    color: black;
     margin-bottom: 25px;
+    padding: 5% 10%;
 }
 
 .invisible {

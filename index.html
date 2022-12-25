@@ -8,13 +8,37 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="navbar">   
-         <h1>Library</h1> 
-    </div>
-
-    <div id="book-card-container">
+        <div id="navbar">   
+             <h1>Library</h1> 
+        </div>
         
-    </div>  
+        <div>
+            <button type="button" id="add-book-button">Add Book</button>
+        </div>
+        
+        <div id="overlay-div" class="overlay"></div> 
+        
+        <div id="book-card-container">
+
+        </div>
+
+
+    <div id="add-book-interface" class="invisible">
+        <div id="add-book-interface-header">Add Book!</div>
+        <div id="exit-add-book-interface"></div>
+
+        <form>
+            <div id="input-container">
+                <input class="input" type="text" name="title" placeholder="Title:" required>
+                <input class="input" type="text" name="author" placeholder="Author:" required>
+                <input class="input" type="number" name="pages" placeholder="Number of Pages:" required>
+
+                <label class="has-read-checkbox" id="has-read-label" for="has-read">Has Read</labe>
+                <input class="has-read-checkbox input" id="the-has-read-checkbox" type="checkbox" name="has-read">
+            </div>  
+            <button type="submit" id="submit-button">Submit</button>
+        </form>
+    </div>
     <script src="script.js" defer></script>
 </body>
 </html>
