@@ -124,43 +124,34 @@ function addBookToLibrary(newBook) {
       hasReadNewCard.innerText = "Has Not Read";
   }
 
-// Wait for click on document and execute anonymous function
-document.addEventListener("click", function(event) {
-
-    // If element clicked has class "remove-card", execute following code
-    if (event.target.matches(".remove-card")) {
-
-      // Get all elements with class "remove-card" and store in variable
-      const removers = document.getElementsByClassName("remove-card");
-
-      // Find index of clicked element in "removers" array
-      const theIndex = [].indexOf.call(removers, event.target);
-
-      // Remove element with class "book-card" at same index as clicked element in "removers" array
-      document.getElementsByClassName("book-card")[theIndex].remove();
-    }
-  });
-  
   // Wait for click on document and execute anonymous function
   document.addEventListener("click", function(event) {
+    // If element clicked has class "remove-card", execute following code
+    if (event.target.matches(".remove-card")) {
+        const removers = document.getElementsByClassName("remove-card");
 
+        // Find index of clicked element in "removers" array
+        const theIndex = [].indexOf.call(removers, event.target);
+        document.getElementsByClassName("book-card")[theIndex].remove();
+      }
+    });
+}
+
+ // Wait for click on document and execute anonymous function
+document.addEventListener("click", function(event) {
     // If element clicked has class "has-read", execute following code
     if (event.target.matches(".has-read")) {
+        const theHasReads = document.getElementsByClassName("has-read");
 
-      // Get all elements with class "has-read" and store in variable
-      const theHasReads = document.getElementsByClassName("has-read");
+         // Find index of clicked element in "theHasReads" array
+        const theIndex = [].indexOf.call(theHasReads, event.target);
 
-      // Find index of clicked element in "theHasReads" array
-      const theIndex = [].indexOf.call(theHasReads, event.target);
-
-      // If "hasRead" property of object at same index as clicked element in "myLibrary" array is true, execute following code
-      if (myLibrary[theIndex].hasRead) {
-        theHasReads[theIndex].innerText = "Has Not Read";
-        myLibrary[theIndex].hasRead = false;
-      } else {
-        theHasReads[theIndex].innerText = "Has Read";
-        myLibrary[theIndex].hasRead = true;
-      }
+        if (myLibrary[theIndex].hasRead) {
+            theHasReads[theIndex].innerText = "Has Not Read";
+            myLibrary[theIndex].hasRead = false;
+        } else {
+            theHasReads[theIndex].innerText = "Has Read";
+            myLibrary[theIndex].hasRead = true;
+        }
     }
-  })
-}
+})
