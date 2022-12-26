@@ -6,6 +6,7 @@ const exitAddBookInterfaceButton = document.getElementById("exit-add-book-interf
 const submitButton = document.getElementById("submit-button");
 const inputs = document.querySelectorAll(".input");
 const hasReads = document.getElementsByClassName("has-read");
+const cardRemovers = document.getElementsByClassName("remove-card");
 
 // Initialize an array to store the books in the library
 let myLibrary = [];
@@ -83,7 +84,7 @@ if (inputs[3].checked) {
   }
   
   // Function to add a book object to the library and display it on the page
-  function addBookToLibrary(newBook) {
+function addBookToLibrary(newBook) {
     // Add the new book object to the library array
     myLibrary.push(newBook);
   
@@ -93,7 +94,8 @@ if (inputs[3].checked) {
     const newCardAuthor = document.createElement("div");
     const newCardPages = document.createElement("div");
     const hasReadNewCard = document.createElement("button");
-  
+    const removeCard = document.createElement("button");
+
     // Append the new book card to the container
     bookCardContainer.appendChild(newCard);
     // Append the book details to the book card
@@ -101,6 +103,7 @@ if (inputs[3].checked) {
     newCard.appendChild(newCardAuthor);
     newCard.appendChild(newCardPages);
     newCard.appendChild(hasReadNewCard);
+    newCard.appendChild(removeCard);
   
     // Add classes to the book card and its elements
     newCard.classList.add("book-card");
@@ -108,29 +111,25 @@ if (inputs[3].checked) {
     newCardAuthor.classList.add("author");
     newCardPages.classList.add("pages");
     hasReadNewCard.classList.add("has-read");
-  
+    removeCard.classList.add("remove-card");
+
     // Set the text of the book card elements to the values of the book object
     newCardTitle.innerText = newBook.title;
     newCardAuthor.innerText = newBook.author;
     newCardPages.innerText = newBook.pages;
+    removeCard.innerText = "Remove";
     if (newBook.hasRead) {
       hasReadNewCard.innerText = "Has Read";
     } else {
       hasReadNewCard.innerText = "Has Not Read";
-    }
-  
-    // Add event listeners to the "Has Read" buttons
-    for (let i = 0; i < hasReads.length; i++) {
-      hasReads[i].addEventListener("click", function() {
-        // Toggle the hasRead property of the book object
-        if (!myLibrary[i].hasRead) {
-          myLibrary[i].hasRead = true;
-          hasReads[i].innerText = "Has Read";
-        } else {
-          myLibrary[i].hasRead = false;
-          hasReads[i].innerText = "Has Not Read";
-        }
-      });
-    }
   }
-  
+
+document.addEventListener("click", function(event) {
+    if (event.target.matches(".remove-card")) {
+        const removers = document.getElementsByClassName("remove-card");
+        console.log("Button was clicked!");
+        const theIndex = [].indexOf.call(removers, event.target);// logs the clicked element
+        document.getElementsByClassName("book-card")[theIndex].remove();
+      }
+    });
+}
