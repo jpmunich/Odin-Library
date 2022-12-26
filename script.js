@@ -116,7 +116,7 @@ function addBookToLibrary(newBook) {
     // Set the text of the book card elements to the values of the book object
     newCardTitle.innerText = newBook.title;
     newCardAuthor.innerText = newBook.author;
-    newCardPages.innerText = newBook.pages;
+    newCardPages.innerText = newBook.pages + " Pages";
     removeCard.innerText = "Remove";
     if (newBook.hasRead) {
       hasReadNewCard.innerText = "Has Read";
