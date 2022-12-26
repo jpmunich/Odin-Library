@@ -127,9 +127,26 @@ function addBookToLibrary(newBook) {
 document.addEventListener("click", function(event) {
     if (event.target.matches(".remove-card")) {
         const removers = document.getElementsByClassName("remove-card");
-        console.log("Button was clicked!");
-        const theIndex = [].indexOf.call(removers, event.target);// logs the clicked element
+        const theIndex = [].indexOf.call(removers, event.target);
         document.getElementsByClassName("book-card")[theIndex].remove();
       }
     });
 }
+
+document.addEventListener("click", function(event) {
+    if (event.target.matches(".has-read")) {
+        console.log("click");
+        const theHasReads = document.getElementsByClassName("has-read");
+        const theIndex = [].indexOf.call(theHasReads, event.target);
+        console.log(theIndex);
+        if (myLibrary[theIndex].hasRead) {
+            theHasReads[theIndex].innerText = "Has Not Read";
+            console.log("Was true");
+            myLibrary[theIndex].hasRead = false;
+        } else {
+            theHasReads[theIndex].innerText = "Has Read";
+            console.log("Was false");
+            myLibrary[theIndex].hasRead = true;
+        }
+    }
+})
